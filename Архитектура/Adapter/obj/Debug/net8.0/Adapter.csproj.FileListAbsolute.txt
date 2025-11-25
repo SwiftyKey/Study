@@ -1,0 +1,14 @@
+C:\Users\Swifty\source\repos\Adapter\bin\Debug\net8.0\Adapter.exe
+C:\Users\Swifty\source\repos\Adapter\bin\Debug\net8.0\Adapter.deps.json
+C:\Users\Swifty\source\repos\Adapter\bin\Debug\net8.0\Adapter.runtimeconfig.json
+C:\Users\Swifty\source\repos\Adapter\bin\Debug\net8.0\Adapter.dll
+C:\Users\Swifty\source\repos\Adapter\bin\Debug\net8.0\Adapter.pdb
+C:\Users\Swifty\source\repos\Adapter\obj\Debug\net8.0\Adapter.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Swifty\source\repos\Adapter\obj\Debug\net8.0\Adapter.AssemblyInfoInputs.cache
+C:\Users\Swifty\source\repos\Adapter\obj\Debug\net8.0\Adapter.AssemblyInfo.cs
+C:\Users\Swifty\source\repos\Adapter\obj\Debug\net8.0\Adapter.csproj.CoreCompileInputs.cache
+C:\Users\Swifty\source\repos\Adapter\obj\Debug\net8.0\Adapter.dll
+C:\Users\Swifty\source\repos\Adapter\obj\Debug\net8.0\refint\Adapter.dll
+C:\Users\Swifty\source\repos\Adapter\obj\Debug\net8.0\Adapter.pdb
+C:\Users\Swifty\source\repos\Adapter\obj\Debug\net8.0\Adapter.genruntimeconfig.cache
+C:\Users\Swifty\source\repos\Adapter\obj\Debug\net8.0\ref\Adapter.dll

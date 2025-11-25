@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Lab1</string>
+    <string name="lab1_text">Лабораторная работа №1</string>
+    <string name="glinka_text">Михаил Иванович Глинка</string>
+    <string name="borodin_text">Александр Порфирьевич Бородин</string>
+    <string name="mussorgsky_text">Модест Петрович Мусоргский</string>
+</resources>

@@ -1,0 +1,14 @@
+C:\Users\Swifty\source\repos\Builder\bin\Debug\net8.0\Builder.exe
+C:\Users\Swifty\source\repos\Builder\bin\Debug\net8.0\Builder.deps.json
+C:\Users\Swifty\source\repos\Builder\bin\Debug\net8.0\Builder.runtimeconfig.json
+C:\Users\Swifty\source\repos\Builder\bin\Debug\net8.0\Builder.dll
+C:\Users\Swifty\source\repos\Builder\bin\Debug\net8.0\Builder.pdb
+C:\Users\Swifty\source\repos\Builder\obj\Debug\net8.0\Builder.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Swifty\source\repos\Builder\obj\Debug\net8.0\Builder.AssemblyInfoInputs.cache
+C:\Users\Swifty\source\repos\Builder\obj\Debug\net8.0\Builder.AssemblyInfo.cs
+C:\Users\Swifty\source\repos\Builder\obj\Debug\net8.0\Builder.csproj.CoreCompileInputs.cache
+C:\Users\Swifty\source\repos\Builder\obj\Debug\net8.0\Builder.dll
+C:\Users\Swifty\source\repos\Builder\obj\Debug\net8.0\refint\Builder.dll
+C:\Users\Swifty\source\repos\Builder\obj\Debug\net8.0\Builder.pdb
+C:\Users\Swifty\source\repos\Builder\obj\Debug\net8.0\Builder.genruntimeconfig.cache
+C:\Users\Swifty\source\repos\Builder\obj\Debug\net8.0\ref\Builder.dll

@@ -1,0 +1,14 @@
+C:\Users\Swifty\source\repos\Chain\bin\Debug\net8.0\Chain.exe
+C:\Users\Swifty\source\repos\Chain\bin\Debug\net8.0\Chain.deps.json
+C:\Users\Swifty\source\repos\Chain\bin\Debug\net8.0\Chain.runtimeconfig.json
+C:\Users\Swifty\source\repos\Chain\bin\Debug\net8.0\Chain.dll
+C:\Users\Swifty\source\repos\Chain\bin\Debug\net8.0\Chain.pdb
+C:\Users\Swifty\source\repos\Chain\obj\Debug\net8.0\Chain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Swifty\source\repos\Chain\obj\Debug\net8.0\Chain.AssemblyInfoInputs.cache
+C:\Users\Swifty\source\repos\Chain\obj\Debug\net8.0\Chain.AssemblyInfo.cs
+C:\Users\Swifty\source\repos\Chain\obj\Debug\net8.0\Chain.csproj.CoreCompileInputs.cache
+C:\Users\Swifty\source\repos\Chain\obj\Debug\net8.0\Chain.dll
+C:\Users\Swifty\source\repos\Chain\obj\Debug\net8.0\refint\Chain.dll
+C:\Users\Swifty\source\repos\Chain\obj\Debug\net8.0\Chain.pdb
+C:\Users\Swifty\source\repos\Chain\obj\Debug\net8.0\Chain.genruntimeconfig.cache
+C:\Users\Swifty\source\repos\Chain\obj\Debug\net8.0\ref\Chain.dll

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "562434544297",
+    "project_id": "qrreader-8f28d",
+    "storage_bucket": "qrreader-8f28d.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:562434544297:android:c36db4d797035b393f8fb8",
+        "android_client_info": {
+          "package_name": "com.example.qrscan"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCdjI3IUTKtVgWTQ9lsUVdMz4brr8sMU28"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

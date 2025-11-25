@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.lab5.SoundVM" />
+    </data>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:backgroundTint="@color/turquoise"
+
+        android:onClick="@{() -> viewModel.onClickButton()}"
+        android:text="@{viewModel.title}"
+        android:textColor="@color/black"
+        app:cornerRadius="30px"
+        tools:text="Sound name" />
+</layout>

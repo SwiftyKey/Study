@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">QR Reader</string>
+    <string name="password">Пароль</string>
+    <string name="email">Почта</string>
+    <string name="login">Войти</string>
+    <string name="register">Зарегестрироваться</string>
+    <string name="scan_history">История сканирований</string>
+    <string name="logout">Выйти</string>
+    <string name="qr_reader">QR Reader</string>
+    <string name="qr_scan">Сканировать QR</string>
+    <string name="log_in">Войти в аккаунт</string>
+</resources>

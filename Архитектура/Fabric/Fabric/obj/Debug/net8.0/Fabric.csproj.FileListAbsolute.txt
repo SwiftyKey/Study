@@ -1,0 +1,14 @@
+C:\Users\Swifty\source\repos\Fabric\Fabric\bin\Debug\net8.0\Fabric.exe
+C:\Users\Swifty\source\repos\Fabric\Fabric\bin\Debug\net8.0\Fabric.deps.json
+C:\Users\Swifty\source\repos\Fabric\Fabric\bin\Debug\net8.0\Fabric.runtimeconfig.json
+C:\Users\Swifty\source\repos\Fabric\Fabric\bin\Debug\net8.0\Fabric.dll
+C:\Users\Swifty\source\repos\Fabric\Fabric\bin\Debug\net8.0\Fabric.pdb
+C:\Users\Swifty\source\repos\Fabric\Fabric\obj\Debug\net8.0\Fabric.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Swifty\source\repos\Fabric\Fabric\obj\Debug\net8.0\Fabric.AssemblyInfoInputs.cache
+C:\Users\Swifty\source\repos\Fabric\Fabric\obj\Debug\net8.0\Fabric.AssemblyInfo.cs
+C:\Users\Swifty\source\repos\Fabric\Fabric\obj\Debug\net8.0\Fabric.csproj.CoreCompileInputs.cache
+C:\Users\Swifty\source\repos\Fabric\Fabric\obj\Debug\net8.0\Fabric.dll
+C:\Users\Swifty\source\repos\Fabric\Fabric\obj\Debug\net8.0\refint\Fabric.dll
+C:\Users\Swifty\source\repos\Fabric\Fabric\obj\Debug\net8.0\Fabric.pdb
+C:\Users\Swifty\source\repos\Fabric\Fabric\obj\Debug\net8.0\Fabric.genruntimeconfig.cache
+C:\Users\Swifty\source\repos\Fabric\Fabric\obj\Debug\net8.0\ref\Fabric.dll
