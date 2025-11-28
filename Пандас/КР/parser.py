@@ -12,13 +12,5 @@ output_path = BASE_DIR / 'book.md'
 with open(output_path, 'w', encoding='utf-8') as f:
     f.write(content)
 
-processed_document = {
-    'source': BASE_DIR / 'book.pdf',
-    'content': content,
-    'markdown_file': BASE_DIR / 'book.md'
-}
-
-documents = [processed_document]
-
-print(f"Document ready: {len(processed_document['content']):,} characters")
-print(f"Markdown saved to: {output_path}")
+print(f"Документ готов: {len(content):,} символов")
+print(f"Обработанный файл сохранен по пути: {output_path}")
