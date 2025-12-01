@@ -78,7 +78,7 @@ class RAGPipeline:
         chunks = [s.payload['chunk'] for s in search_result]
         chunks = [f'Вариант {i+1}: {chunk}' for i, chunk in enumerate(chunks)]
         chunks = '\n\n'.join(chunks)
-
+        print(chunks)
         return chunks
 
     def run(self, query: str):
