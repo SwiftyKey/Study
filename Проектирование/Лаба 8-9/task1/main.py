@@ -10,6 +10,48 @@ from core.tools import TOOLS_MAP
 from utils.accuracy import estimate_accuracy
 
 def main(page: ft.Page):
+    HELP_TEXT = (
+        "                          ДОКУМЕНТАЦИЯ\n"
+        "==================================\n\n"
+        "1. ФУНКЦИИ ПРОГРАММЫ\n"
+        "---------------------\n"
+        "• Решение краевых задач для обыкновенных дифференциальных уравнений (ОДУ).\n"
+        "• Поддержка пяти численных методов:\n"
+        "   – Метод конечных разностей,\n"
+        "   – Метод прогонки,\n"
+        "   – Метод коллокации,\n"
+        "   – Метод наименьших квадратов,\n"
+        "   – Метод Галеркина.\n"
+        "• Автоматическая оценка точности.\n"
+        "• Визуализация численного и точного решений на одном графике.\n"
+        "• Возможность изменения параметров задачи: интервал, граничные условия, число узлов.\n\n"
+        "2. МАТЕМАТИЧЕСКАЯ МОДЕЛЬ\n"
+        "-------------------------\n"
+        "Программа решает линейные краевые задачи вида:\n"
+        "   –(p(x)·y′(x))′ + q(x)·y(x) = f(x),   x ∈ [a, b]\n"
+        "с граничными условиями Дирихле:\n"
+        "   y(a) = α,   y(b) = β.\n\n"
+        "По умолчанию используется тестовая задача:\n"
+        "   y″(x) = –π²·sin(πx),   y(0) = y(1) = 0,\n"
+        "точное решение: y(x) = sin(πx).\n\n"
+        "3. ТРЕБОВАНИЯ К ВВОДУ\n"
+        "----------------------\n"
+        "• Интервал [a, b]: a < b.\n"
+        "• Число узлов N ≥ 3.\n"
+        "• Функции p(x), q(x), f(x) должны быть заданы как числовые функции (в коде).\n"
+        "• Граничные значения α, β — вещественные числа.\n\n"
+        "4. ГРАФИЧЕСКИЙ ИНТЕРФЕЙС\n"
+        "-------------------------\n"
+        "• Поля ввода: a, b, y(a), y(b), число узлов.\n"
+        "• Выбор метода из выпадающего списка.\n"
+        "• Кнопка «Решить» — запускает расчёт и построение графика.\n"
+        "• График отображает:\n"
+        "   – Численное решение (маркеры),\n"
+        "   – Точное решение (штриховая линия, если доступно).\n"
+        "• Погрешности: L∞ и L2-нормы.\n"
+        "• Вкладка «Справка» — содержит данную документацию."
+    )
+
     page.title = "ППП: Краевые задачи ОДУ"
     page.scroll = "auto"
 
@@ -37,7 +79,9 @@ def main(page: ft.Page):
             beta = float(beta_field.value)
             N = int(N_field.value)
             if N < 3:
-                raise ValueError("N должно быть >= 3")
+                raise TypeError("N должно быть >= 3")
+            elif method_dropdown.value is None:
+                raise TypeError("Выберите метод решения")
 
             # Пример: y'' = -pi^2 sin(pi x), y(0)=y(1)=0 → y=sin(pi x)
             problem = BoundaryValueProblem(
@@ -79,22 +123,51 @@ def main(page: ft.Page):
             result_image.visible = True
 
             page.update()
+        except ValueError as vex:
+            error_text.value = f"Ошибка: данные должны быть числами"
+            result_image.visible = False
+            page.update()
         except Exception as ex:
             error_text.value = f"Ошибка: {str(ex)}"
             result_image.visible = False
             page.update()
 
     solve_btn = ft.ElevatedButton("Решить", on_click=on_solve)
+    # Создаём вкладку "Решение"
+    solve_tab = ft.Tab(
+        text="Решение",
+        content=ft.Column([
+            ft.Row([a_field, b_field, alpha_field, beta_field, N_field]),
+            method_dropdown,
+            solve_btn,
+            error_text,
+            result_image
+        ], scroll=ft.ScrollMode.AUTO)
+    )
+
+    # Создаём вкладку "Справка"
+    help_tab = ft.Tab(
+        text="Справка",
+        content=ft.Container(
+            content=ft.ListView(
+                controls=[ft.Text(HELP_TEXT, selectable=True)],
+                expand=True
+            ),
+            padding=20,
+            expand=True
+        )
+    )
+
+    # Добавляем вкладки на страницу
+    tabs = ft.Tabs(
+        selected_index=0,
+        tabs=[solve_tab, help_tab],
+        expand=True
+    )
 
     page.add(
         ft.Text("ППП: Краевые задачи ОДУ", size=24, weight="bold"),
-        ft.Row([a_field, b_field, alpha_field, beta_field, N_field]),
-        method_dropdown,
-        solve_btn,
-        error_text,
-        result_image,
-        ft.Divider(),
-        ft.Text("ℹ️ Текущая задача: y'' = -π²·sin(πx), y(0)=y(1)=0 → y=sin(πx)", italic=True)
+        tabs
     )
 
 ft.app(target=main)

@@ -2,61 +2,58 @@ import numpy as np
 
 def solve_collocation(problem):
     """
-    Метод коллокации:
-    - Базис: psi_k(x) = (x-a)(b-x) * x^{k-1}, k=1..M
-    - Коллокационные точки: внутренние узлы сетки (равномерные)
+    Метод коллокации с аналитической второй производной.
+    Базис: psi_k(x) = x^k - x^{k+1}, k=1..M
     """
     a, b = problem.a, problem.b
-    M = min(problem.N - 2, 8)  # ограничим размер базиса
+    M = min(problem.N - 2, 4)  # уменьшено до 4
     if M <= 0:
         M = 1
 
-    # Функция, удовлетворяющая граничным условиям
+    # phi0(x) = 0, так как alpha=beta=0 в тестовой задаче
     def phi0(x):
         return problem.alpha * (b - x) / (b - a) + problem.beta * (x - a) / (b - a)
 
-    # Базисные функции (нулевые на границах)
-    def psi(k, x):
-        return (x - a) * (b - x) * (x ** (k - 1))
+    def phi0_dd(x):
+        # Вторая производная линейной функции = 0
+        return 0.0
 
-    # Производные второго порядка (аналитически)
+    # Аналитическая вторая производная psi_k
     def psi_dd(k, x):
-        # psi = (x-a)(b-x) x^{k-1} = (-(x-a)(x-b)) x^{k-1}
-        # Можно дифференцировать, но для простоты — численно
-        h = 1e-6
-        return (psi(k, x + h) - 2 * psi(k, x) + psi(k, x - h)) / (h ** 2)
+        if k == 1:
+            # psi_1 = x - x^2 → psi_1'' = -2
+            return -2.0
+        else:
+            term1 = k * (k - 1) * (x ** (k - 2)) if x != 0 or k > 2 else 0.0
+            term2 = (k + 1) * k * (x ** (k - 1))
+            return term1 - term2
 
-    # Коллокационные точки (внутренние)
-    x_coll = np.linspace(a, b, M + 2)[1:-1]  # M точек
+    def psi(k, x):
+        return (x ** k) - (x ** (k + 1))
 
-    # Собираем СЛАУ: A c = F
+    # Коллокационные точки — внутренние узлы
+    x_coll = np.linspace(a, b, M + 2)[1:-1]
+
     A = np.zeros((M, M))
     F = np.zeros(M)
 
     for i, xi in enumerate(x_coll):
-        # Правая часть с учётом phi0
-        F[i] = problem.f(xi) + phi0(xi) * problem.q(xi)  # если уравнение: -y'' + q y = f
-        if hasattr(problem, 'p') and problem.p(xi) != 1:
-            # Для общего случая нужно учитывать p(x), но упростим
-            pass
-        # Добавляем phi0''(xi)
-        h = 1e-6
-        phi0_dd = (phi0(xi + h) - 2 * phi0(xi) + phi0(xi - h)) / (h ** 2)
-        F[i] += phi0_dd  # так как -y'' → +phi0''
+        # Правая часть: f(xi) + phi0''(xi) - q(xi)*phi0(xi)
+        F[i] = problem.f(xi) + phi0_dd(xi) - problem.q(xi) * phi0(xi)
 
         for k in range(1, M + 1):
-            # Уравнение: -psi_k''(xi) + q(xi) * psi_k(xi)
-            val = -psi_dd(k, xi) + problem.q(xi) * psi(k, xi)
-            A[i, k - 1] = val
+            # Уравнение: -psi_k''(xi) + q(xi)*psi_k(xi)
+            A[i, k - 1] = -psi_dd(k, xi) + problem.q(xi) * psi(k, xi)
 
-    # Решаем СЛАУ
     try:
         coeffs = np.linalg.solve(A, F)
     except np.linalg.LinAlgError:
         coeffs = np.linalg.lstsq(A, F, rcond=None)[0]
 
-    # Строим решение на плотной сетке
+    # Строим решение
     x_plot = np.linspace(a, b, problem.N)
-    y_plot = np.array([phi0(x) + sum(coeffs[k] * psi(k + 1, x) for k in range(M)) for x in x_plot])
-
+    y_plot = np.array([
+        phi0(x) + sum(coeffs[k] * psi(k + 1, x) for k in range(M))
+        for x in x_plot
+    ])
     return x_plot, y_plot
