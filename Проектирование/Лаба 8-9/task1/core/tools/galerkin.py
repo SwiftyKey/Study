@@ -49,5 +49,5 @@ def solve_galerkin(problem):
         coeffs = np.linalg.lstsq(A, F, rcond=None)[0]
 
     x_plot = np.linspace(a, b, problem.N)
-    y_plot = np.array([phi0(x) + sum(coeffs[k] * psi(k + 1, x) for k in range(M)) for x in x_plot])
+    y_plot = np.array([-1 * phi0(x) - sum(coeffs[k] * psi(k + 1, x) for k in range(M)) for x in x_plot])
     return x_plot, y_plot
