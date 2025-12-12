@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "VB27xE8fjl8=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Swifty\\source\\repos\\Memento\\Memento.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Swifty\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.22\\microsoft.windowsdesktop.app.ref.8.0.22.nupkg.sha512",
+    "C:\\Users\\Swifty\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.22\\microsoft.netcore.app.ref.8.0.22.nupkg.sha512",
+    "C:\\Users\\Swifty\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.22\\microsoft.aspnetcore.app.ref.8.0.22.nupkg.sha512",
+    "C:\\Users\\Swifty\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\8.0.22\\microsoft.netcore.app.host.win-x64.8.0.22.nupkg.sha512"
+  ],
+  "logs": []
+}
