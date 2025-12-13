@@ -1,0 +1,59 @@
+MSW1:
+conf t
+int Port-channel12
+no switchport
+ip address 10.0.100.29 255.255.255.252
+exit
+router ospf 1
+network 10.0.100.28 0.0.0.3 area 0
+exit
+int range g0/1-2
+no channel-group
+no switchport
+no ip address
+channel-group 12 mode active
+
+MSW2:
+conf t
+int Port-channel12
+no switchport
+ip address 10.0.100.30 255.255.255.252
+exit
+router ospf 1
+network 10.0.100.28 0.0.0.3 area 0
+exit
+int range g0/1-2
+no channel-group
+no switchport
+no ip address
+channel-group 12 mode active
+
+MSW3:
+conf t
+int Port-channel34
+no switchport
+ip address 10.0.100.25 255.255.255.252
+exit
+router ospf 1
+network 10.0.100.24 0.0.0.3 area 0
+exit
+int range g0/1-2
+no channel-group
+no switchport
+no ip address
+channel-group 34 mode active
+
+MSW4:
+conf t
+int Port-channel34
+no switchport
+ip address 10.0.100.26 255.255.255.252
+exit
+router ospf 1
+network 10.0.100.24 0.0.0.3 area 0
+exit
+int range g0/1-2
+no channel-group
+no switchport
+no ip address
+channel-group 34 mode active

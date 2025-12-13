@@ -1,0 +1,43 @@
+MSW1/MSW2:
+conf t
+interface FastEthernet0/9
+ip ospf network point-to-point
+exit
+interface FastEthernet0/10
+ip ospf network point-to-point
+exit
+
+MSW3/MSW4:
+conf t
+interface FastEthernet0/8
+ip ospf network point-to-point
+exit
+interface FastEthernet0/9
+ip ospf network point-to-point
+exit
+
+MSW1:
+configure terminal
+interface FastEthernet0/9
+ ip ospf cost 10
+exit
+
+
+MSW2:
+configure terminal
+interface FastEthernet0/10
+ ip ospf cost 10
+exit
+
+MSW3:
+configure terminal
+interface FastEthernet0/8
+ ip ospf cost 10
+exit
+
+
+MSW4:
+configure terminal
+interface FastEthernet0/9
+ ip ospf cost 10
+exit
