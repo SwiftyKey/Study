@@ -1,0 +1,226 @@
+{
+    "0": {
+        "file": "distoriton-accent",
+        "model": "base",
+        "expected": "please send me the payment confirmation by the end of the day",
+        "predicted": "Please send me the payment confirmation by the end of the day.",
+        "similarity": 0.992
+    },
+    "1": {
+        "file": "simple-distortion",
+        "model": "base",
+        "expected": "hello my name is stepan",
+        "predicted": "Hello! My name is Cipunca",
+        "similarity": 0.792
+    },
+    "2": {
+        "file": "ru-simple-distortion",
+        "model": "base",
+        "expected": "я работаю инженером-программистм в айти-компании",
+        "predicted": "Я работаю генерам программистом в войти компании.",
+        "similarity": 0.845
+    },
+    "3": {
+        "file": "ru-simple",
+        "model": "base",
+        "expected": "сегодня прекрасная погода и я иду гулять в парк",
+        "predicted": "Сегодня прекрасные погоды, и я иду в парк.",
+        "similarity": 0.831
+    },
+    "4": {
+        "file": "simple",
+        "model": "base",
+        "expected": "hello my name is stepan",
+        "predicted": "– Hello. – Hi, ladies? – Can you and my friend to get used to it? – Yes, Your Highness. – What did you say? – He recommended me some products from the Patreon program",
+        "similarity": 0.222
+    },
+    "5": {
+        "file": "ru-distortion",
+        "model": "base",
+        "expected": "заказ был оформлен 14 декабря 2025 года на сумму 3 450 рублей",
+        "predicted": "Заказ был оформлен 14 декабря 2025 года на сумму 3450 рублей.",
+        "similarity": 0.984
+    },
+    "6": {
+        "file": "simple-slowly",
+        "model": "base",
+        "expected": "i work as a software engineer developing payment systems",
+        "predicted": "I work as a software engineer, developing payment systems.",
+        "similarity": 0.982
+    },
+    "7": {
+        "file": "ru-distortion-slowly",
+        "model": "base",
+        "expected": "если вы не получили уведомление проверьте папку спам в вашем почтовом ящике",
+        "predicted": "Если вы не получили увидом лени, то есть, проверите бабку с пан в вашем пищном ящике.",
+        "similarity": 0.812
+    },
+    "8": {
+        "file": "distoriton-accent",
+        "model": "small",
+        "expected": "please send me the payment confirmation by the end of the day",
+        "predicted": "Порушуйс einmalо повідомлення на ко切і з contracting video.",
+        "similarity": 0.286
+    },
+    "9": {
+        "file": "simple-distortion",
+        "model": "small",
+        "expected": "hello my name is stepan",
+        "predicted": "Hello! My name is Stepan.",
+        "similarity": 0.958
+    },
+    "10": {
+        "file": "ru-simple-distortion",
+        "model": "small",
+        "expected": "я работаю инженером-программистм в айти-компании",
+        "predicted": "Я работаю генерным программистом в IT компании.",
+        "similarity": 0.8
+    },
+    "11": {
+        "file": "ru-simple",
+        "model": "small",
+        "expected": "сегодня прекрасная погода и я иду гулять в парк",
+        "predicted": "Сегодня прекрасная погода и я иду в парк.",
+        "similarity": 0.909
+    },
+    "12": {
+        "file": "simple",
+        "model": "small",
+        "expected": "hello my name is stepan",
+        "predicted": "Халлоу! Мой нэм истепан!",
+        "similarity": 0.128
+    },
+    "13": {
+        "file": "ru-distortion",
+        "model": "small",
+        "expected": "заказ был оформлен 14 декабря 2025 года на сумму 3 450 рублей",
+        "predicted": "Заказ был оформлен 14 декабря 2025 года на сумму 3 450 рублей.",
+        "similarity": 0.992
+    },
+    "14": {
+        "file": "simple-slowly",
+        "model": "small",
+        "expected": "i work as a software engineer developing payment systems",
+        "predicted": "Добаяш вида с Tellyabil mesa лук как а asked software engineer кport �이었о, Sith Un veins ancestry пъ coefficients decade период",
+        "similarity": 0.383
+    },
+    "15": {
+        "file": "ru-distortion-slowly",
+        "model": "small",
+        "expected": "если вы не получили уведомление проверьте папку спам в вашем почтовом ящике",
+        "predicted": "Если вы не получили уведомления, коверьте под пуском в вашем почтовом ящике.",
+        "similarity": 0.874
+    },
+    "16": {
+        "file": "distoriton-accent",
+        "model": "medium",
+        "expected": "please send me the payment confirmation by the end of the day",
+        "predicted": "Please send me the payment confirmation by the end of the day.",
+        "similarity": 0.992
+    },
+    "17": {
+        "file": "simple-distortion",
+        "model": "medium",
+        "expected": "hello my name is stepan",
+        "predicted": "Hello, my name is Stepan.",
+        "similarity": 0.958
+    },
+    "18": {
+        "file": "ru-simple-distortion",
+        "model": "medium",
+        "expected": "я работаю инженером-программистм в айти-компании",
+        "predicted": "Я работаю инженером программистом в IT компании.",
+        "similarity": 0.875
+    },
+    "19": {
+        "file": "ru-simple",
+        "model": "medium",
+        "expected": "сегодня прекрасная погода и я иду гулять в парк",
+        "predicted": "Сегодня прекрасная погода, и я иду в парк.",
+        "similarity": 0.899
+    },
+    "20": {
+        "file": "simple",
+        "model": "medium",
+        "expected": "hello my name is stepan",
+        "predicted": "Hello, my name is Stepan.",
+        "similarity": 0.958
+    },
+    "21": {
+        "file": "ru-distortion",
+        "model": "medium",
+        "expected": "заказ был оформлен 14 декабря 2025 года на сумму 3 450 рублей",
+        "predicted": "Заказ был оформлен 14 декабря 2025 года на суммы 3450 рублей.",
+        "similarity": 0.967
+    },
+    "22": {
+        "file": "simple-slowly",
+        "model": "medium",
+        "expected": "i work as a software engineer developing payment systems",
+        "predicted": "Да пр pos disks и находится на Completed patreon.com",
+        "similarity": 0.222
+    },
+    "23": {
+        "file": "ru-distortion-slowly",
+        "model": "medium",
+        "expected": "если вы не получили уведомление проверьте папку спам в вашем почтовом ящике",
+        "predicted": "Если вы не получили уведомления, коверьте папку SPAM в вашем почтовом ящике.",
+        "similarity": 0.901
+    },
+    "24": {
+        "file": "distoriton-accent",
+        "model": "large",
+        "expected": "please send me the payment confirmation by the end of the day",
+        "predicted": "Please send me the payment confirmation by the end of the day.",
+        "similarity": 0.992
+    },
+    "25": {
+        "file": "simple-distortion",
+        "model": "large",
+        "expected": "hello my name is stepan",
+        "predicted": "Hello, my name is Stepan.",
+        "similarity": 0.958
+    },
+    "26": {
+        "file": "ru-simple-distortion",
+        "model": "large",
+        "expected": "я работаю инженером-программистм в айти-компании",
+        "predicted": "Я работаю инженером-программистом в IT-компании.",
+        "similarity": 0.917
+    },
+    "27": {
+        "file": "ru-simple",
+        "model": "large",
+        "expected": "сегодня прекрасная погода и я иду гулять в парк",
+        "predicted": "Сегодня прекрасная погода и я иду в парк.",
+        "similarity": 0.909
+    },
+    "28": {
+        "file": "simple",
+        "model": "large",
+        "expected": "hello my name is stepan",
+        "predicted": "Hello, my name is Stepan.",
+        "similarity": 0.958
+    },
+    "29": {
+        "file": "ru-distortion",
+        "model": "large",
+        "expected": "заказ был оформлен 14 декабря 2025 года на сумму 3 450 рублей",
+        "predicted": "Заказ был оформлен 14 декабря 2025 года на сумму 3350 рублей.",
+        "similarity": 0.967
+    },
+    "30": {
+        "file": "simple-slowly",
+        "model": "large",
+        "expected": "i work as a software engineer developing payment systems",
+        "predicted": "I work as a software engineer developing pavement systems.",
+        "similarity": 0.965
+    },
+    "31": {
+        "file": "ru-distortion-slowly",
+        "model": "large",
+        "expected": "если вы не получили уведомление проверьте папку спам в вашем почтовом ящике",
+        "predicted": "если вы не получили уведомление проверьте папку спам вашем почтовом ящике",
+        "similarity": 0.986
+    }
+}
