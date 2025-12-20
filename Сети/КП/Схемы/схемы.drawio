@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" version="29.2.7" pages="3">
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36" version="29.2.7" pages="3">
   <diagram name="Структурная схема" id="WhVSkNIsiDZywBTP1dXA">
     <mxGraphModel dx="1042" dy="623" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -570,7 +570,7 @@
         <mxCell id="1ApyWFItGclKpEAuz6ox-11" parent="1ApyWFItGclKpEAuz6ox-15" style="shape=mxgraph.cisco.storage.cloud;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=none;strokeColor=#7EA6E0;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;fontSize=15;fontColor=#000000;fillStyle=solid;" value="" vertex="1">
           <mxGeometry height="120" width="200" as="geometry" />
         </mxCell>
-        <mxCell id="1ApyWFItGclKpEAuz6ox-14" parent="1ApyWFItGclKpEAuz6ox-15" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=15;fontColor=#FFFFFF;" value="&lt;font color=&quot;#000000&quot;&gt;Польз. Сегмент 1&lt;br&gt;Здание А&lt;br&gt;vlan 10&lt;br&gt;10.0.0.0/26&lt;/font&gt;" vertex="1">
+        <mxCell id="1ApyWFItGclKpEAuz6ox-14" parent="1ApyWFItGclKpEAuz6ox-15" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=15;fontColor=#FFFFFF;" value="&lt;font color=&quot;#000000&quot;&gt;Польз. Сегмент 1&lt;br&gt;Здание А&lt;br&gt;vlan 10&lt;br&gt;10.0.0.0/25&lt;/font&gt;" vertex="1">
           <mxGeometry height="90" width="150" x="32.25806451612903" y="18.11320754716981" as="geometry" />
         </mxCell>
         <mxCell id="1ApyWFItGclKpEAuz6ox-16" connectable="0" parent="1" style="group" value="" vertex="1">
@@ -579,7 +579,7 @@
         <mxCell id="1ApyWFItGclKpEAuz6ox-17" parent="1ApyWFItGclKpEAuz6ox-16" style="shape=mxgraph.cisco.storage.cloud;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=none;strokeColor=#7EA6E0;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;fontSize=15;fontColor=#000000;fillStyle=solid;" value="" vertex="1">
           <mxGeometry height="120" width="210.00000000000003" as="geometry" />
         </mxCell>
-        <mxCell id="1ApyWFItGclKpEAuz6ox-18" parent="1ApyWFItGclKpEAuz6ox-16" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=15;fontColor=#FFFFFF;" value="&lt;font color=&quot;#000000&quot;&gt;Польз. Сегмент 2&lt;br&gt;Здание А&lt;br&gt;vlan 20&lt;br&gt;10.0.0.64/26&lt;/font&gt;" vertex="1">
+        <mxCell id="1ApyWFItGclKpEAuz6ox-18" parent="1ApyWFItGclKpEAuz6ox-16" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=15;fontColor=#FFFFFF;" value="&lt;font color=&quot;#000000&quot;&gt;Польз. Сегмент 2&lt;br&gt;Здание А&lt;br&gt;vlan 20&lt;br&gt;10.0.0.128/25&lt;/font&gt;" vertex="1">
           <mxGeometry height="90" width="150" x="30.000645161290322" y="14.996603773584905" as="geometry" />
         </mxCell>
         <mxCell id="1ApyWFItGclKpEAuz6ox-19" connectable="0" parent="1" style="group" value="" vertex="1">
@@ -588,7 +588,7 @@
         <mxCell id="1ApyWFItGclKpEAuz6ox-20" parent="1ApyWFItGclKpEAuz6ox-19" style="shape=mxgraph.cisco.storage.cloud;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=none;strokeColor=#7EA6E0;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;fontSize=15;fontColor=#000000;fillStyle=solid;" value="" vertex="1">
           <mxGeometry height="115" width="189.99999999999997" as="geometry" />
         </mxCell>
-        <mxCell id="1ApyWFItGclKpEAuz6ox-21" parent="1ApyWFItGclKpEAuz6ox-19" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=15;fontColor=#FFFFFF;" value="&lt;font color=&quot;#000000&quot;&gt;Польз. Сегмент 4&lt;br&gt;Здание Б&lt;br&gt;vlan 40&lt;br&gt;10.0.0.192/26&lt;/font&gt;" vertex="1">
+        <mxCell id="1ApyWFItGclKpEAuz6ox-21" parent="1ApyWFItGclKpEAuz6ox-19" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=15;fontColor=#FFFFFF;" value="&lt;font color=&quot;#000000&quot;&gt;Польз. Сегмент 4&lt;br&gt;Здание Б&lt;br&gt;vlan 40&lt;br&gt;10.0.1.128/25&lt;/font&gt;" vertex="1">
           <mxGeometry height="90" width="150" x="27.936970271979757" y="17.69597968069666" as="geometry" />
         </mxCell>
         <mxCell id="1ApyWFItGclKpEAuz6ox-22" connectable="0" parent="1" style="group" value="" vertex="1">
@@ -597,7 +597,7 @@
         <mxCell id="1ApyWFItGclKpEAuz6ox-23" parent="1ApyWFItGclKpEAuz6ox-22" style="shape=mxgraph.cisco.storage.cloud;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=none;strokeColor=#7EA6E0;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;fontSize=15;fontColor=#000000;fillStyle=solid;" value="" vertex="1">
           <mxGeometry height="121.00000000000001" width="200" as="geometry" />
         </mxCell>
-        <mxCell id="1ApyWFItGclKpEAuz6ox-24" parent="1ApyWFItGclKpEAuz6ox-22" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=15;fontColor=#FFFFFF;" value="&lt;font color=&quot;#000000&quot;&gt;Польз. Сегмент 5&lt;br&gt;Здание Б&lt;br&gt;vlan 50&lt;br&gt;10.0.1.0/26&lt;/font&gt;" vertex="1">
+        <mxCell id="1ApyWFItGclKpEAuz6ox-24" parent="1ApyWFItGclKpEAuz6ox-22" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=15;fontColor=#FFFFFF;" value="&lt;font color=&quot;#000000&quot;&gt;Польз. Сегмент 5&lt;br&gt;Здание Б&lt;br&gt;vlan 50&lt;br&gt;10.0.2.0/25&lt;/font&gt;" vertex="1">
           <mxGeometry height="90" width="150" x="29.99537634408602" y="19.995094339622643" as="geometry" />
         </mxCell>
         <mxCell id="1ApyWFItGclKpEAuz6ox-25" connectable="0" parent="1" style="group" value="" vertex="1">
@@ -606,7 +606,7 @@
         <mxCell id="1ApyWFItGclKpEAuz6ox-26" parent="1ApyWFItGclKpEAuz6ox-25" style="shape=mxgraph.cisco.storage.cloud;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=none;strokeColor=#7EA6E0;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;fontSize=15;fontColor=#000000;fillStyle=solid;" value="" vertex="1">
           <mxGeometry height="120" width="199" as="geometry" />
         </mxCell>
-        <mxCell id="1ApyWFItGclKpEAuz6ox-27" parent="1ApyWFItGclKpEAuz6ox-25" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=15;fontColor=#FFFFFF;" value="&lt;font color=&quot;#000000&quot;&gt;Серв. Сегмент 1&lt;br&gt;Здание А&lt;br&gt;vlan 101&lt;br&gt;10.0.1.128/27&lt;/font&gt;" vertex="1">
+        <mxCell id="1ApyWFItGclKpEAuz6ox-27" parent="1ApyWFItGclKpEAuz6ox-25" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=15;fontColor=#FFFFFF;" value="&lt;font color=&quot;#000000&quot;&gt;Серв. Сегмент 1&lt;br&gt;Здание А&lt;br&gt;vlan 101&lt;br&gt;10.0.3.0/26&lt;/font&gt;" vertex="1">
           <mxGeometry height="90" width="140" x="29.497311827956988" y="15.000754716981131" as="geometry" />
         </mxCell>
         <mxCell id="1ApyWFItGclKpEAuz6ox-28" connectable="0" parent="1" style="group" value="" vertex="1">
@@ -615,7 +615,7 @@
         <mxCell id="1ApyWFItGclKpEAuz6ox-29" parent="1ApyWFItGclKpEAuz6ox-28" style="shape=mxgraph.cisco.storage.cloud;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=none;strokeColor=#7EA6E0;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;fontSize=15;fontColor=#000000;fillStyle=solid;" value="" vertex="1">
           <mxGeometry height="116" width="200" as="geometry" />
         </mxCell>
-        <mxCell id="1ApyWFItGclKpEAuz6ox-30" parent="1ApyWFItGclKpEAuz6ox-28" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=15;fontColor=#FFFFFF;" value="&lt;font color=&quot;#000000&quot;&gt;Серв. Сегмент 2&lt;br&gt;Здание А&lt;br&gt;vlan 102&lt;br&gt;10.0.1.160/27&lt;/font&gt;" vertex="1">
+        <mxCell id="1ApyWFItGclKpEAuz6ox-30" parent="1ApyWFItGclKpEAuz6ox-28" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=15;fontColor=#FFFFFF;" value="&lt;font color=&quot;#000000&quot;&gt;Серв. Сегмент 2&lt;br&gt;Здание А&lt;br&gt;vlan 102&lt;br&gt;10.0.3.64/26&lt;/font&gt;" vertex="1">
           <mxGeometry height="90" width="140" x="30.001720430107525" y="13.003396226415095" as="geometry" />
         </mxCell>
         <mxCell id="1ApyWFItGclKpEAuz6ox-31" connectable="0" parent="1" style="group" value="" vertex="1">
@@ -624,7 +624,7 @@
         <mxCell id="1ApyWFItGclKpEAuz6ox-32" parent="1ApyWFItGclKpEAuz6ox-31" style="shape=mxgraph.cisco.storage.cloud;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=none;strokeColor=#7EA6E0;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;fontSize=15;fontColor=#000000;fillStyle=solid;" value="" vertex="1">
           <mxGeometry height="120" width="200" as="geometry" />
         </mxCell>
-        <mxCell id="1ApyWFItGclKpEAuz6ox-33" parent="1ApyWFItGclKpEAuz6ox-31" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=15;fontColor=#FFFFFF;" value="&lt;font color=&quot;#000000&quot;&gt;Серв. Сегмент 3&lt;br&gt;Здание Б&lt;br&gt;vlan 103&lt;br&gt;10.0.1.192/27&lt;/font&gt;" vertex="1">
+        <mxCell id="1ApyWFItGclKpEAuz6ox-33" parent="1ApyWFItGclKpEAuz6ox-31" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=15;fontColor=#FFFFFF;" value="&lt;font color=&quot;#000000&quot;&gt;Серв. Сегмент 3&lt;br&gt;Здание Б&lt;br&gt;vlan 103&lt;br&gt;10.0.3.128/26&lt;/font&gt;" vertex="1">
           <mxGeometry height="90" width="140" x="40.001720430107525" y="15.000754716981131" as="geometry" />
         </mxCell>
         <mxCell id="1ApyWFItGclKpEAuz6ox-37" connectable="0" parent="1" style="group" value="" vertex="1">
@@ -672,7 +672,7 @@
         <mxCell id="gW33s-Sg8jENDw_HcoJP-2" parent="gW33s-Sg8jENDw_HcoJP-1" style="shape=mxgraph.cisco.storage.cloud;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=none;strokeColor=#7EA6E0;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;fontSize=15;fontColor=#000000;fillStyle=solid;" value="" vertex="1">
           <mxGeometry height="120" width="210.00000000000003" as="geometry" />
         </mxCell>
-        <mxCell id="gW33s-Sg8jENDw_HcoJP-3" parent="gW33s-Sg8jENDw_HcoJP-1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=15;fontColor=#FFFFFF;" value="&lt;font color=&quot;#000000&quot;&gt;Польз. Сегмент 3&lt;/font&gt;&lt;div&gt;&lt;font color=&quot;#000000&quot;&gt;Здание А&lt;br&gt;vlan 30&lt;br&gt;10.0.0.128/26&lt;/font&gt;&lt;/div&gt;" vertex="1">
+        <mxCell id="gW33s-Sg8jENDw_HcoJP-3" parent="gW33s-Sg8jENDw_HcoJP-1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=15;fontColor=#FFFFFF;" value="&lt;font color=&quot;#000000&quot;&gt;Польз. Сегмент 3&lt;/font&gt;&lt;div&gt;&lt;font color=&quot;#000000&quot;&gt;Здание А&lt;br&gt;vlan 30&lt;br&gt;10.0.1.0/25&lt;/font&gt;&lt;/div&gt;" vertex="1">
           <mxGeometry height="90" width="150" x="30.000645161290322" y="14.996603773584905" as="geometry" />
         </mxCell>
         <mxCell id="gW33s-Sg8jENDw_HcoJP-4" connectable="0" parent="1" style="group" value="" vertex="1">
@@ -681,7 +681,7 @@
         <mxCell id="gW33s-Sg8jENDw_HcoJP-5" parent="gW33s-Sg8jENDw_HcoJP-4" style="shape=mxgraph.cisco.storage.cloud;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=none;strokeColor=#7EA6E0;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;fontSize=15;fontColor=#000000;fillStyle=solid;" value="" vertex="1">
           <mxGeometry height="121.00000000000001" width="200" as="geometry" />
         </mxCell>
-        <mxCell id="gW33s-Sg8jENDw_HcoJP-6" parent="gW33s-Sg8jENDw_HcoJP-4" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=15;fontColor=#FFFFFF;" value="&lt;font color=&quot;#000000&quot;&gt;Польз. Сегмент 6&lt;br&gt;Здание Б&lt;br&gt;vlan 60&lt;br&gt;10.0.1.64/26&lt;/font&gt;" vertex="1">
+        <mxCell id="gW33s-Sg8jENDw_HcoJP-6" parent="gW33s-Sg8jENDw_HcoJP-4" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=15;fontColor=#FFFFFF;" value="&lt;font color=&quot;#000000&quot;&gt;Польз. Сегмент 6&lt;br&gt;Здание Б&lt;br&gt;vlan 60&lt;br&gt;10.0.2.128/25&lt;/font&gt;" vertex="1">
           <mxGeometry height="90" width="150" x="29.99537634408602" y="19.995094339622643" as="geometry" />
         </mxCell>
         <mxCell id="NjIQzQgULS8pmHD5we8Y-27" connectable="0" parent="1" style="group" value="" vertex="1">
