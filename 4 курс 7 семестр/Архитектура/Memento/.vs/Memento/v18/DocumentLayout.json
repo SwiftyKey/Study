@@ -1,13 +1,13 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Swifty\\source\\repos\\Memento\\",
+  "WorkspaceRootPath": "C:\\Users\\Swifty\\Downloads\\\u0412\u0423\u0417\\\u0423\u0447\u0435\u0431\u0430\\4 \u043A\u0443\u0440\u0441 7 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\\u0410\u0440\u0445\u0438\u0442\u0435\u043A\u0442\u0443\u0440\u0430\\Memento\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{61CAA904-F3B1-43E5-AB27-6BAB18574F95}|Memento.csproj|c:\\users\\swifty\\source\\repos\\memento\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{61CAA904-F3B1-43E5-AB27-6BAB18574F95}|Memento.csproj|c:\\users\\swifty\\downloads\\\u0432\u0443\u0437\\\u0443\u0447\u0435\u0431\u0430\\4 \u043A\u0443\u0440\u0441 7 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\\u0430\u0440\u0445\u0438\u0442\u0435\u043A\u0442\u0443\u0440\u0430\\memento\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{61CAA904-F3B1-43E5-AB27-6BAB18574F95}|Memento.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{61CAA904-F3B1-43E5-AB27-6BAB18574F95}|Memento.csproj|c:\\users\\swifty\\source\\repos\\memento\\someclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{61CAA904-F3B1-43E5-AB27-6BAB18574F95}|Memento.csproj|c:\\users\\swifty\\downloads\\\u0432\u0443\u0437\\\u0443\u0447\u0435\u0431\u0430\\4 \u043A\u0443\u0440\u0441 7 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\\u0430\u0440\u0445\u0438\u0442\u0435\u043A\u0442\u0443\u0440\u0430\\memento\\someclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{61CAA904-F3B1-43E5-AB27-6BAB18574F95}|Memento.csproj|solutionrelative:someclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -28,9 +28,9 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "SomeClass.cs",
-              "DocumentMoniker": "C:\\Users\\Swifty\\source\\repos\\Memento\\SomeClass.cs",
+              "DocumentMoniker": "C:\\Users\\Swifty\\Downloads\\\u0412\u0423\u0417\\\u0423\u0447\u0435\u0431\u0430\\4 \u043A\u0443\u0440\u0441 7 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\\u0410\u0440\u0445\u0438\u0442\u0435\u043A\u0442\u0443\u0440\u0430\\Memento\\SomeClass.cs",
               "RelativeDocumentMoniker": "SomeClass.cs",
-              "ToolTip": "C:\\Users\\Swifty\\source\\repos\\Memento\\SomeClass.cs",
+              "ToolTip": "C:\\Users\\Swifty\\Downloads\\\u0412\u0423\u0417\\\u0423\u0447\u0435\u0431\u0430\\4 \u043A\u0443\u0440\u0441 7 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\\u0410\u0440\u0445\u0438\u0442\u0435\u043A\u0442\u0443\u0440\u0430\\Memento\\SomeClass.cs",
               "RelativeToolTip": "SomeClass.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -41,9 +41,9 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Swifty\\source\\repos\\Memento\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\Swifty\\Downloads\\\u0412\u0423\u0417\\\u0423\u0447\u0435\u0431\u0430\\4 \u043A\u0443\u0440\u0441 7 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\\u0410\u0440\u0445\u0438\u0442\u0435\u043A\u0442\u0443\u0440\u0430\\Memento\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\Swifty\\source\\repos\\Memento\\Program.cs",
+              "ToolTip": "C:\\Users\\Swifty\\Downloads\\\u0412\u0423\u0417\\\u0423\u0447\u0435\u0431\u0430\\4 \u043A\u0443\u0440\u0441 7 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\\u0410\u0440\u0445\u0438\u0442\u0435\u043A\u0442\u0443\u0440\u0430\\Memento\\Program.cs",
               "RelativeToolTip": "Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAADYAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
