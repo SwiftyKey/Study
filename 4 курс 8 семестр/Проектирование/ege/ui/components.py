@@ -145,8 +145,8 @@ def create_task_sidebar(tasks: List[Dict[str, Any]], current_task_idx: int,
 
     for idx, task in enumerate(tasks):
         task_id = task['id']
-        is_current = (idx == current_task_idx)
-        is_answered = task_id in answers and answers[task_id] not in [None, "", []]
+        is_current = (task_id == current_task_idx)
+        is_answered = task_id in answers and answers[task_id] not in [None, "", [], ',']
 
         if is_current:
             bgcolor = COLOR_ACTIVE
@@ -159,34 +159,29 @@ def create_task_sidebar(tasks: List[Dict[str, Any]], current_task_idx: int,
             color = COLOR_TEXT
 
         btn = ft.ElevatedButton(
-            text=str(task_id),
-            width=50,
-            height=50,
-            bgcolor=bgcolor,
-            color=color,
-            on_click=lambda e, t_idx=idx: on_task_click(t_idx),
+            text=f"{task_id}",
+            width=45,
+            height=45,
             style=ft.ButtonStyle(
-                shape=ft.RoundedRectangleBorder(radius=8),
+                bgcolor=bgcolor,
+                color=color,
+                shape=ft.RoundedRectangleBorder(radius=4),
             ),
+            on_click=lambda e, t_idx=idx: on_task_click(t_idx),
+            key=f"task_{task_id}",
         )
         task_buttons.append(btn)
 
-    grid = ft.GridView(
-        controls=task_buttons,
-        runs_count=5,
-        max_extent=60,
-        spacing=5,
-        run_spacing=5,
-    )
-
     return ft.Container(
-        content=ft.Column([
-            ft.Text("Задания", size=16, weight="bold", color=COLOR_ACTIVE),
-            ft.Divider(color=COLOR_ACTIVE),
-            grid,
-        ], scroll=ft.ScrollMode.AUTO),
-        width=300,
-        padding=15,
+        content=ft.Column(
+            controls=task_buttons,
+            scroll=ft.ScrollMode.AUTO,
+            spacing=5,
+            expand=True,
+        ),
+        width=70,
+        padding=10,
         bgcolor=COLOR_SURFACE,
         border=ft.border.only(right=ft.BorderSide(1, COLOR_ACTIVE)),
+        expand=False,
     )

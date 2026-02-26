@@ -5,7 +5,8 @@ from config.settings import COLOR_BG, COLOR_ACTIVE, COLOR_TEXT, COLOR_SURFACE, E
 from services.exam_service import ExamService
 from ui.components import (
     create_elevated_button, create_text_field, create_scrollable_column,
-    create_timer_display, create_result_table, create_task_input_container
+    create_timer_display, create_result_table, create_task_input_container,
+    create_task_sidebar
 )
 
 
@@ -17,7 +18,8 @@ class EgeStudentApp:
         self.timer_running = False
         self.current_task_idx = 0
         self.current_input_controls = []
-        self.sidebar_container = self._create_sidebar()
+        self.main_row = None
+        self.sidebar_container = None
 
         self._setup_page()
         self._build_login_view()
@@ -31,14 +33,18 @@ class EgeStudentApp:
         self.page.padding = 20
 
     def _create_sidebar(self):
-        from ui.components import create_task_sidebar
+        if not self.exam_service.tasks:
+            return ft.Container(width=280, bgcolor=COLOR_SURFACE), {}
 
-        return create_task_sidebar(
+        sidebar = create_task_sidebar(
             tasks=self.exam_service.tasks,
-            current_task_idx=self.current_task_idx,
+            current_task_idx=self.exam_service.tasks[self.current_task_idx]['id'],
             answers=self.exam_service.answers,
             on_task_click=self._navigate_to_task
         )
+
+        self.sidebar_container = sidebar
+        return sidebar
 
     def _navigate_to_task(self, task_idx: int):
         self._save_current_answer()
@@ -47,11 +53,6 @@ class EgeStudentApp:
             self.current_task_idx = task_idx
             self._render_task()
             self._update_sidebar()
-
-    def _update_sidebar(self):
-        if self.sidebar_container:
-            self.sidebar_container = self._create_sidebar()
-            self.page.update()
 
     def _build_login_view(self):
         self.tf_school = create_text_field("Школа", width=300)
@@ -94,39 +95,66 @@ class EgeStudentApp:
         self._start_timer()
         self._render_task()
 
+    def _update_sidebar(self):
+        if self.main_row and len(self.main_row.controls) > 0:
+            new_sidebar = self._create_sidebar()
+            self.main_row.controls[0] = new_sidebar
+            self.main_row.update()
+
+    def _toggle_sidebar(self, e):
+        self.sidebar_visible = not self.sidebar_visible
+        self.sidebar_container.visible = self.sidebar_visible
+        self.page.update()
+
     def _build_exam_view(self):
         self.lbl_timer = create_timer_display(self.timer_seconds)
         self.lbl_task_num = ft.Text("Задание 1", size=24, weight="bold")
         self.img_task = ft.Image(height=300, fit=ft.ImageFit.CONTAIN)
         self.inputs_container = ft.Column()
+        self.sidebar_visible = True
+
+        toggle_sidebar_btn = ft.IconButton(
+            icon=ft.Icons.MENU,
+            icon_color=COLOR_ACTIVE,
+            on_click=self._toggle_sidebar
+        )
 
         nav_row = ft.Row([
-            create_elevated_button("Назад", on_click=self._prev_task, bgcolor=COLOR_SURFACE, color=COLOR_TEXT),
-            create_elevated_button("Далее", on_click=self._next_task),
+            create_elevated_button("← Назад", on_click=self._prev_task, bgcolor=COLOR_SURFACE, color=COLOR_TEXT),
+            create_elevated_button("Далее →", on_click=self._next_task),
         ], alignment=ft.MainAxisAlignment.CENTER)
 
         finish_btn = create_elevated_button("ЗАВЕРШИТЬ", on_click=self._finish_exam, bgcolor="red", color="white")
 
         header = ft.Row([
+            toggle_sidebar_btn,
             self.lbl_timer,
             ft.Container(expand=True),
             finish_btn
         ], alignment=ft.MainAxisAlignment.SPACE_BETWEEN)
 
-        exam_view = create_scrollable_column([
+        task_content = ft.Column([
             header,
             ft.Divider(color=COLOR_ACTIVE),
-            ft.Row([
-                ft.Column([
-                    self.lbl_task_num,
-                    self.img_task,
-                    self.inputs_container,
-                    nav_row
-                ], alignment=ft.MainAxisAlignment.START, scroll=ft.ScrollMode.AUTO, expand=True)
-            ], alignment=ft.MainAxisAlignment.CENTER, expand=True)
-        ], expand=True)
+            self.lbl_task_num,
+            self.img_task,
+            self.inputs_container,
+            nav_row,
+        ], alignment=ft.MainAxisAlignment.START, scroll=ft.ScrollMode.AUTO, expand=True)
 
-        self.page.add(exam_view)
+        self._create_sidebar()
+
+        self.main_row = ft.Row([
+                self.sidebar_container,
+                task_content,
+            ],
+            expand=True,
+            spacing=0,
+            vertical_alignment=ft.CrossAxisAlignment.START
+        )
+
+        self.page.add(self.main_row)
+        self.page.update()
 
     def _start_timer(self):
         self.timer_running = True
@@ -229,13 +257,9 @@ class EgeStudentApp:
     def _finish_exam(self, e):
         self.timer_running = False
         self._save_current_answer()
-
         self.exam_service.end_exam_session()
 
         total, max_score, results = self.exam_service.calculate_results()
-
-        print(results)
-
         filename = self.exam_service.save_results_to_csv(results, total, max_score)
 
         self._show_results(total, max_score, results, filename)
