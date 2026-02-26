@@ -3,5 +3,5 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="MPI.vcxproj" />
+  <Project Path="MPI.vcxproj" Id="805e69c7-5025-4a24-a9c4-7116d1b82f52" />
 </Solution>

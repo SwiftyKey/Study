@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option csharp_namespace = "StringComparisonService";
+
+package StringComparison;
+
+service StringComparer {
+  rpc CompareStrings (CompareRequest) returns (CompareResponse);
+}
+
+message CompareRequest {
+  string a = 1;
+  string c = 2;
+}
+
+message CompareResponse {
+  bool equal = 1;
+}
