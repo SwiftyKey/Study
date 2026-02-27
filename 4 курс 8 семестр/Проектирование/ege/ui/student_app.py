@@ -29,8 +29,6 @@ class EgeStudentApp:
         self.page.theme_mode = ft.ThemeMode.DARK
         self.page.bgcolor = COLOR_BG
         self.page.full_screen = True
-        self.page.scroll = ft.ScrollMode.AUTO
-        self.page.padding = 20
 
     def _create_sidebar(self):
         if not self.exam_service.tasks:
@@ -140,7 +138,7 @@ class EgeStudentApp:
             self.img_task,
             self.inputs_container,
             nav_row,
-        ], alignment=ft.MainAxisAlignment.START, scroll=ft.ScrollMode.AUTO, expand=True)
+        ], alignment=ft.MainAxisAlignment.START, scroll=ft.ScrollMode.ADAPTIVE, expand=True)
 
         self._create_sidebar()
 
@@ -149,7 +147,7 @@ class EgeStudentApp:
                 task_content,
             ],
             expand=True,
-            spacing=0,
+            spacing=20,
             vertical_alignment=ft.CrossAxisAlignment.START
         )
 

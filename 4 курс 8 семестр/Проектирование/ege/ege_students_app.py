@@ -9,8 +9,6 @@ def main(page: ft.Page):
     page.bgcolor = COLOR_BG
     page.vertical_alignment = ft.MainAxisAlignment.CENTER
     page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
-    page.scroll = ft.ScrollMode.AUTO
-    page.padding = 20
 
     EgeStudentApp(page)
 
