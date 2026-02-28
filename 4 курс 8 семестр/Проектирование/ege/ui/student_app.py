@@ -9,7 +9,28 @@ from ui.components import (
     create_task_sidebar
 )
 from utils.helpers import get_task_image_path
+import sys
+import logging
+from pathlib import Path
 
+def setup_logging():
+    if getattr(sys, 'frozen', False):
+        log_path = Path(sys.executable).parent / "app.log"
+    else:
+        log_path = Path(__file__).parent / "app.log"
+
+    logging.basicConfig(
+        level=logging.INFO,
+        format='%(asctime)s - %(levelname)s - %(message)s',
+        handlers=[
+            logging.FileHandler(log_path, encoding='utf-8', mode='a'),
+            logging.StreamHandler(sys.stdout)
+        ]
+    )
+    return logging.getLogger(__name__)
+
+logger = setup_logging()
+logger.info("=== Запуск приложения ===")
 
 class EgeStudentApp:
     def __init__(self, page: ft.Page):
@@ -66,29 +87,65 @@ class EgeStudentApp:
         self.page.add(login_view)
 
     def _start_exam(self, e):
-        if not self.tf_number.value:
-            self._show_snackbar("Заполните все поля!")
-            return
-
-        success, message = self.exam_service.start_exam_session()
-        if not success:
-            self._show_snackbar(f"Предупреждение: {message}")
-
         try:
-            self.exam_service.set_student_info(self.tf_number.value)
-        except Exception as e:
-            self._show_snackbar(str(e))
-            return
+            logger.info("Нажата кнопка начала экзамена")
+            if not self.tf_number.value:
+                logger.warning("Не заполнены поля")
+                self._show_snackbar("Заполните все поля!")
+                return
 
-        tasks = self.exam_service.load_tasks()
-        if not tasks:
-            self._show_snackbar("Нет заданий в базе!")
-            return
+            logger.info(f"Номер: {self.tf_number.value}")
 
-        self.page.clean()
-        self._build_exam_view()
-        self._start_timer()
-        self._render_task()
+            from utils.helpers import get_app_path
+            db_path = get_app_path() / "ege_tasks.db"
+            logger.info(f"Путь к БД: {db_path}")
+            logger.info(f"БД существует: {db_path.exists()}")
+
+            if not db_path.exists():
+                logger.error("База данных не найдена!")
+                self._show_snackbar("Ошибка: База данных не найдена!")
+                return
+
+            success, message = self.exam_service.start_exam_session()
+            logger.info("Начало сессии")
+            if not success:
+                logger.error("Ошибка блокировка сети")
+                self._show_snackbar(f"Предупреждение: {message}")
+
+            try:
+                self.exam_service.set_student_info(self.tf_number.value)
+                logger.info("Получение сведений об участнике")
+            except Exception as e:
+                self._show_snackbar(str(e))
+                logger.error("Ошибка получения данных об участнике")
+                return
+
+            tasks = self.exam_service.load_tasks()
+            logger.info(f"Загружено заданий: {len(tasks)}")
+            if not tasks:
+                logger.warning("Задания не загружены")
+                self._show_snackbar("Нет заданий в базе!")
+                return
+
+            self.page.clean()
+            self._build_exam_view()
+            self._start_timer()
+            self._render_task()
+
+            logger.info("Экзамен начат успешно")
+        except Exception as ex:
+            import traceback
+            error_msg = f"{str(ex)}\n\n{traceback.format_exc()}"
+            logger.error(f"Критическая ошибка: {error_msg}")
+
+            self.page.dialog = ft.AlertDialog(
+                title=ft.Text("Ошибка"),
+                content=ft.Text(error_msg[:500]),
+                actions=[ft.TextButton("OK", on_click=lambda e: self.page.close_dialog())],
+                modal=True
+            )
+            self.page.dialog.open = True
+            self.page.update()
 
     def _update_sidebar(self):
         if self.main_row and len(self.main_row.controls) > 0:

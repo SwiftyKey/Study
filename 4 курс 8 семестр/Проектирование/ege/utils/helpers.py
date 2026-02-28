@@ -14,6 +14,11 @@ def get_app_path() -> Path:
 def get_images_path() -> Path:
     return get_app_path() / "images"
 
+def get_db_path() -> Path:
+    if getattr(sys, 'frozen', False):
+        return Path(sys.executable).parent / "ege_tasks.db"
+    else:
+        return Path(__file__).parent.parent / "ege_tasks.db"
 
 def get_task_image_path(task_id: int) -> Path:
     images_dir = get_images_path()

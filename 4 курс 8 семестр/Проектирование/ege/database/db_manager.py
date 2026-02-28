@@ -5,8 +5,12 @@ from config.settings import DB_PATH
 
 
 class DatabaseManager:
-    def __init__(self):
-        self.db_path = DB_PATH
+    def __init__(self, db_path=None):
+        if db_path is None:
+            from utils.helpers import get_db_path
+            self.db_path = get_db_path()
+        else:
+            self.db_path = db_path
         self.init_db()
 
     def init_db(self):
