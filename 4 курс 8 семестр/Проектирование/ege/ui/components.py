@@ -47,7 +47,7 @@ def create_task_input_container(task_id: int, answer_value: Any = "") -> ft.Colu
     if answer_value is None:
         answer_value = ""
 
-    if task_id in [17, 18, 26, 27]:
+    if task_id in [17, 18, 20, 26]:
         if isinstance(answer_value, list):
             parts = answer_value
         else:
@@ -70,6 +70,23 @@ def create_task_input_container(task_id: int, answer_value: Any = "") -> ft.Colu
                 saved_vals.append("")
 
         for r in range(8):
+            row_controls = ft.Row()
+            for c in range(2):
+                idx = r * 2 + c
+                val = saved_vals[idx] if idx < len(saved_vals) else ""
+                row_controls.controls.append(
+                    create_text_field(value=str(val), width=150, text_size=12, text_align=ft.TextAlign.CENTER)
+                )
+            container.controls.append(row_controls)
+    elif task_id == 27:
+        if not isinstance(answer_value, list):
+            saved_vals = [""] * 4
+        else:
+            saved_vals = answer_value
+            while len(saved_vals) < 4:
+                saved_vals.append("")
+
+        for r in range(2):
             row_controls = ft.Row()
             for c in range(2):
                 idx = r * 2 + c

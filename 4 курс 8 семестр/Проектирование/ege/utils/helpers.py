@@ -1,5 +1,29 @@
 from typing import Any
 from datetime import datetime
+import sys
+from pathlib import Path
+
+
+def get_app_path() -> Path:
+    if getattr(sys, 'frozen', False):
+        return Path(sys.executable).parent
+    else:
+        return Path(__file__).parent.parent
+
+
+def get_images_path() -> Path:
+    return get_app_path() / "images"
+
+
+def get_task_image_path(task_id: int) -> Path:
+    images_dir = get_images_path()
+
+    for ext in ['.png', '.jpg', '.jpeg', '.gif', '.webp']:
+        img_path = images_dir / f"{task_id}{ext}"
+        if img_path.exists():
+            return img_path
+
+    return images_dir / f"{task_id}.png"
 
 
 def format_time(minutes: int) -> str:

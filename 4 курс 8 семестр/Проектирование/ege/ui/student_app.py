@@ -8,6 +8,7 @@ from ui.components import (
     create_timer_display, create_result_table, create_task_input_container,
     create_task_sidebar
 )
+from utils.helpers import get_task_image_path
 
 
 class EgeStudentApp:
@@ -53,23 +54,19 @@ class EgeStudentApp:
             self._update_sidebar()
 
     def _build_login_view(self):
-        self.tf_school = create_text_field("Школа", width=300)
-        self.tf_class = create_text_field("Класс", width=100)
-        self.tf_name = create_text_field("ФИО", width=400)
+        self.tf_number = create_text_field("Введите номер", width=400)
         self.btn_start = create_elevated_button("НАЧАТЬ ЭКЗАМЕН", on_click=self._start_exam, height=50)
 
         login_view = create_scrollable_column([
             ft.Text("Регистрация участника", size=30, color=COLOR_ACTIVE),
-            self.tf_school,
-            self.tf_class,
-            self.tf_name,
+            self.tf_number,
             self.btn_start
         ], alignment=ft.MainAxisAlignment.CENTER, horizontal_alignment=ft.CrossAxisAlignment.CENTER)
 
         self.page.add(login_view)
 
     def _start_exam(self, e):
-        if not all([self.tf_school.value, self.tf_name.value]):
+        if not self.tf_number.value:
             self._show_snackbar("Заполните все поля!")
             return
 
@@ -77,11 +74,11 @@ class EgeStudentApp:
         if not success:
             self._show_snackbar(f"Предупреждение: {message}")
 
-        self.exam_service.set_student_info(
-            self.tf_school.value,
-            self.tf_class.value,
-            self.tf_name.value
-        )
+        try:
+            self.exam_service.set_student_info(self.tf_number.value)
+        except Exception as e:
+            self._show_snackbar(str(e))
+            return
 
         tasks = self.exam_service.load_tasks()
         if not tasks:
@@ -107,7 +104,7 @@ class EgeStudentApp:
     def _build_exam_view(self):
         self.lbl_timer = create_timer_display(self.timer_seconds)
         self.lbl_task_num = ft.Text("Задание 1", size=24, weight="bold")
-        self.img_task = ft.Image(height=300, fit=ft.ImageFit.CONTAIN)
+        self.img_task = ft.Image(height=900, width=900, fit=ft.ImageFit.CONTAIN)
         self.inputs_container = ft.Column()
         self.sidebar_visible = True
 
@@ -179,16 +176,13 @@ class EgeStudentApp:
 
         self.lbl_task_num.value = f"Задание № {task_id}"
 
-        img_path = task.get('c_img_path', '')
-        if img_path:
-            import os
-            if os.path.exists(img_path):
-                self.img_task.src = img_path
-                self.img_task.visible = True
-            else:
-                self.img_task.visible = False
+        img_path = get_task_image_path(task_id)
+        if img_path.exists():
+            self.img_task.src = str(img_path)
+            self.img_task.visible = True
         else:
             self.img_task.visible = False
+            self._show_snackbar(f"Изображение задания {task_id} не найдено в папке images/")
 
         saved_answer = self.exam_service.get_answer(task_id)
 
@@ -225,15 +219,13 @@ class EgeStudentApp:
         if not fields:
             return
 
-        if task_id in [17, 18, 26, 27]:
+        if task_id in [17, 18, 20, 26]:
             val1 = fields[0].value if len(fields) > 0 else ""
             val2 = fields[1].value if len(fields) > 1 else ""
             self.exam_service.save_answer(task_id, f"{val1},{val2}")
-
-        elif task_id == 25:
+        elif task_id in [25, 27]:
             vals = ','.join([str(f.value) for f in fields]).replace(",,", "")
             self.exam_service.save_answer(task_id, vals)
-
         else:
             if len(fields) > 0:
                 self.exam_service.save_answer(task_id, fields[0].value)
@@ -257,17 +249,21 @@ class EgeStudentApp:
         self._save_current_answer()
         self.exam_service.end_exam_session()
 
-        total, max_score, results = self.exam_service.calculate_results()
-        filename = self.exam_service.save_results_to_csv(results, total, max_score)
+        total, max_score, total_test, max_test, results = self.exam_service.calculate_results()
+        self.exam_service.save_results_to_csv(results, total, total_test)
 
-        self._show_results(total, max_score, results, filename)
+        self._show_results(total, max_score, total_test, max_test, results)
 
-    def _show_results(self, total: int, max_score: int, results: List, filename: str):
+    def _show_results(self, total: int, max_score: int, total_test: int, max_test: int, results: List):
         self.page.clean()
 
         results_content = create_scrollable_column([
             ft.Container(
                 content=ft.Text(f"Результат: {total} / {max_score}", size=30, color=COLOR_ACTIVE, weight="bold"),
+                padding=ft.padding.only(bottom=20)
+            ),
+            ft.Container(
+                content=ft.Text(f"ИТОГО: {total_test} / {max_test}", size=30, color=COLOR_ACTIVE, weight="bold"),
                 padding=ft.padding.only(bottom=20)
             ),
             ft.Container(

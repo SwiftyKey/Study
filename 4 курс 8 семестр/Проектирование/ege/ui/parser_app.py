@@ -11,7 +11,7 @@ class TasksParserApp:
     def __init__(self, page: ft.Page):
         self.page = page
         self.db = DatabaseManager()
-        self.folder_path: Optional[Path] = None
+        self.students_path: Optional[Path] = None
         self.csv_path: Optional[Path] = None
 
         self._setup_page()
@@ -24,9 +24,9 @@ class TasksParserApp:
         self.page.bgcolor = COLOR_BG
 
     def _create_pickers(self):
-        self.folder_picker = ft.FilePicker(on_result=self._on_folder_picked)
+        self.student_picker = ft.FilePicker(on_result=self._on_student_picked)
         self.csv_picker = ft.FilePicker(on_result=self._on_csv_picked)
-        self.page.overlay.extend([self.folder_picker, self.csv_picker])
+        self.page.overlay.extend([self.csv_picker, self.student_picker])
 
     def _build_login_view(self):
         self.pw_field = create_text_field("Пароль администратора", password=True, width=300)
@@ -52,13 +52,14 @@ class TasksParserApp:
             self.pw_field.update()
 
     def _build_main_view(self):
-        self.tf_folder = create_text_field("Папка с картинками", read_only=True, width=400)
+        self.tf_student = create_text_field("CSV файл со студентами", read_only=True, width=400)
         self.tf_csv = create_text_field("CSV файл с ответами", read_only=True, width=400)
         self.lbl_status = ft.Text("", color=COLOR_ACTIVE)
+        self.lbl_status_s = ft.Text("", color=COLOR_ACTIVE)
 
-        btn_pick_folder = create_elevated_button(
-            "Выбрать папку с изображениями",
-            on_click=lambda _: self.folder_picker.get_directory_path(),
+        btn_pick_student = create_elevated_button(
+            "Выбрать CSV файл",
+            on_click=lambda _: self.student_picker.pick_files(allowed_extensions=["csv"]),
             bgcolor=COLOR_SURFACE,
             color=COLOR_TEXT
         )
@@ -80,9 +81,10 @@ class TasksParserApp:
 
         main_view = create_scrollable_column([
             ft.Text("Настройка варианта ЕГЭ", size=24, weight="bold", color=COLOR_ACTIVE),
-            ft.Row([btn_pick_folder, self.tf_folder]),
+            ft.Row([btn_pick_student, self.tf_student]),
             ft.Row([btn_pick_csv, self.tf_csv]),
             self.lbl_status,
+            self.lbl_status_s,
             ft.Divider(),
             btn_upload,
             btn_clear
@@ -90,25 +92,26 @@ class TasksParserApp:
 
         self.page.add(main_view)
 
-    def _on_folder_picked(self, e: ft.FilePickerResultEvent):
-        if e.path:
-            self.folder_path = Path(e.path)
-            self.tf_folder.value = str(self.folder_path)
-            self.tf_folder.update()
-
     def _on_csv_picked(self, e: ft.FilePickerResultEvent):
         if e.files:
             self.csv_path = Path(e.files[0].path)
             self.tf_csv.value = str(self.csv_path)
             self.tf_csv.update()
 
+    def _on_student_picked(self, e: ft.FilePickerResultEvent):
+        if e.files:
+            self.students_path = Path(e.files[0].path)
+            self.tf_student.value = str(self.students_path)
+            self.tf_student.update()
+
     def _upload_to_db(self, e):
-        if not self.folder_path or not self.csv_path:
+        if not self.csv_path:
             self._show_status("Ошибка: Путь к папке или файлу не указан", "red")
             return
 
         try:
             tasks = []
+            students = []
             with open(self.csv_path, 'r', encoding='utf-8') as f:
                 reader = csv.DictReader(f, delimiter=';')
                 for row in reader:
@@ -117,22 +120,22 @@ class TasksParserApp:
                     score = row.get('score') or row.get('баллы') or 1
 
                     if t_id and ans:
-                        img_file = None
-                        for file in self.folder_path.iterdir():
-                            if file.stem == str(t_id) or file.name.startswith(str(t_id)):
-                                img_file = file
-                                break
-
-                        path_str = str(img_file) if img_file else str(self.folder_path / f"{t_id}.jpg")
                         tasks.append({
                             'id': t_id,
-                            'img_path': path_str,
                             'answer': ans,
                             'score': int(score)
                         })
 
             count = self.db.add_tasks_batch(tasks)
             self._show_status(f"Успешно загружено {count} заданий.", COLOR_ACTIVE)
+
+            with open(self.students_path, 'r', encoding='utf-8') as f:
+                reader = csv.DictReader(f, delimiter=';')
+                for row in reader:
+                    students.append(row)
+
+            count = self.db.add_students_batch(students)
+            self._show_status_s(f"Успешно загружено {count} студентов.", COLOR_ACTIVE)
 
         except Exception as ex:
             self._show_status(f"Ошибка при загрузке: {str(ex)}", "red")
@@ -145,3 +148,8 @@ class TasksParserApp:
         self.lbl_status.value = message
         self.lbl_status.color = color
         self.lbl_status.update()
+
+    def _show_status_s(self, message: str, color: str):
+        self.lbl_status_s.value = message
+        self.lbl_status_s.color = color
+        self.lbl_status_s.update()
