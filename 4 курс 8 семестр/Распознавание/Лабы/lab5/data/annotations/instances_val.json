@@ -1,0 +1,18 @@
+{
+    "images": [
+      {"id": 1, "file_name": "img_001.jpg", "width": 640, "height": 480},
+      {"id": 2, "file_name": "img_002.jpg", "width": 640, "height": 480},
+      {"id": 3, "file_name": "img_003.jpg", "width": 640, "height": 480}
+    ],
+    "annotations": [
+      {"id": 1, "image_id": 1, "category_id": 1, "bbox": [100, 100, 50, 50], "area": 2500, "iscrowd": 0},
+      {"id": 2, "image_id": 1, "category_id": 1, "bbox": [300, 200, 60, 60], "area": 3600, "iscrowd": 0},
+      {"id": 3, "image_id": 2, "category_id": 1, "bbox": [150, 150, 40, 40], "area": 1600, "iscrowd": 0},
+      {"id": 4, "image_id": 3, "category_id": 1, "bbox": [200, 100, 80, 80], "area": 6400, "iscrowd": 0},
+      {"id": 5, "image_id": 3, "category_id": 2, "bbox": [400, 300, 50, 50], "area": 2500, "iscrowd": 0}
+    ],
+    "categories": [
+      {"id": 1, "name": "defect", "supercategory": "object"},
+      {"id": 2, "name": "person", "supercategory": "object"}
+    ]
+  }

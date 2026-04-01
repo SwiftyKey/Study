@@ -1,4 +1,0 @@
-<Solution>
-  <Project Path="GRPCClient/GRPCClient.csproj" />
-  <Project Path="GRPCServer/GRPCServer.csproj" />
-</Solution>

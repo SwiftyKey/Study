@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <LocalDebuggerCommand>C:\Programs\Microsoft MPI\Bin\mpiexec.exe</LocalDebuggerCommand>
-    <LocalDebuggerCommandArguments>-n 5 "$(TargetPath)"</LocalDebuggerCommandArguments>
-    <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
-    <LocalDebuggerCommandArgumentsHistory>-n 4 "C:\Users\Swifty\Downloads\ВУЗ\Учеба\4 курс 8 семестр\Распределенные вычисления\1\MPI\x64\Debug\MPI.exe"|-n 10 "C:\Users\Swifty\Downloads\ВУЗ\Учеба\4 курс 8 семестр\Распределенные вычисления\1\MPI\x64\Debug\MPI.exe"|-n 0 "C:\Users\Swifty\Downloads\ВУЗ\Учеба\4 курс 8 семестр\Распределенные вычисления\1\MPI\x64\Debug\MPI.exe"|-n 1 "C:\Users\Swifty\Downloads\ВУЗ\Учеба\4 курс 8 семестр\Распределенные вычисления\1\MPI\x64\Debug\MPI.exe"|-n 5 "C:\Users\Swifty\Downloads\ВУЗ\Учеба\4 курс 8 семестр\Распределенные вычисления\1\MPI\x64\Debug\MPI.exe"|</LocalDebuggerCommandArgumentsHistory>
-  </PropertyGroup>
-</Project>

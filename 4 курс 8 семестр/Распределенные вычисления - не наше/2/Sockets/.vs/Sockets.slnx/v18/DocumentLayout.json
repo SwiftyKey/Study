@@ -1,0 +1,58 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Swifty\\Downloads\\\u0412\u0423\u0417\\\u0423\u0447\u0435\u0431\u0430\\4 \u043A\u0443\u0440\u0441 8 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\\u0420\u0430\u0441\u043F\u0440\u0435\u0434\u0435\u043B\u0435\u043D\u043D\u044B\u0435 \u0432\u044B\u0447\u0438\u0441\u043B\u0435\u043D\u0438\u044F\\2\\Sockets\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{58F2691F-DA02-4E2F-A04D-36931437C585}|Server\\Server.csproj|c:\\users\\swifty\\downloads\\\u0432\u0443\u0437\\\u0443\u0447\u0435\u0431\u0430\\4 \u043A\u0443\u0440\u0441 8 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\\u0440\u0430\u0441\u043F\u0440\u0435\u0434\u0435\u043B\u0435\u043D\u043D\u044B\u0435 \u0432\u044B\u0447\u0438\u0441\u043B\u0435\u043D\u0438\u044F\\2\\sockets\\server\\udpclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{58F2691F-DA02-4E2F-A04D-36931437C585}|Server\\Server.csproj|solutionrelative:server\\udpclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{58F2691F-DA02-4E2F-A04D-36931437C585}|Server\\Server.csproj|c:\\users\\swifty\\downloads\\\u0432\u0443\u0437\\\u0443\u0447\u0435\u0431\u0430\\4 \u043A\u0443\u0440\u0441 8 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\\u0440\u0430\u0441\u043F\u0440\u0435\u0434\u0435\u043B\u0435\u043D\u043D\u044B\u0435 \u0432\u044B\u0447\u0438\u0441\u043B\u0435\u043D\u0438\u044F\\2\\sockets\\server\\tcpclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{58F2691F-DA02-4E2F-A04D-36931437C585}|Server\\Server.csproj|solutionrelative:server\\tcpclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UDPClient.cs",
+              "DocumentMoniker": "C:\\Users\\Swifty\\Downloads\\\u0412\u0423\u0417\\\u0423\u0447\u0435\u0431\u0430\\4 \u043A\u0443\u0440\u0441 8 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\\u0420\u0430\u0441\u043F\u0440\u0435\u0434\u0435\u043B\u0435\u043D\u043D\u044B\u0435 \u0432\u044B\u0447\u0438\u0441\u043B\u0435\u043D\u0438\u044F\\2\\Sockets\\Server\\UDPClient.cs",
+              "RelativeDocumentMoniker": "Server\\UDPClient.cs",
+              "ToolTip": "C:\\Users\\Swifty\\Downloads\\\u0412\u0423\u0417\\\u0423\u0447\u0435\u0431\u0430\\4 \u043A\u0443\u0440\u0441 8 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\\u0420\u0430\u0441\u043F\u0440\u0435\u0434\u0435\u043B\u0435\u043D\u043D\u044B\u0435 \u0432\u044B\u0447\u0438\u0441\u043B\u0435\u043D\u0438\u044F\\2\\Sockets\\Server\\UDPClient.cs",
+              "RelativeToolTip": "Server\\UDPClient.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-13T05:43:35.915Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TCPClient.cs",
+              "DocumentMoniker": "C:\\Users\\Swifty\\Downloads\\\u0412\u0423\u0417\\\u0423\u0447\u0435\u0431\u0430\\4 \u043A\u0443\u0440\u0441 8 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\\u0420\u0430\u0441\u043F\u0440\u0435\u0434\u0435\u043B\u0435\u043D\u043D\u044B\u0435 \u0432\u044B\u0447\u0438\u0441\u043B\u0435\u043D\u0438\u044F\\2\\Sockets\\Server\\TCPClient.cs",
+              "RelativeDocumentMoniker": "Server\\TCPClient.cs",
+              "ToolTip": "C:\\Users\\Swifty\\Downloads\\\u0412\u0423\u0417\\\u0423\u0447\u0435\u0431\u0430\\4 \u043A\u0443\u0440\u0441 8 \u0441\u0435\u043C\u0435\u0441\u0442\u0440\\\u0420\u0430\u0441\u043F\u0440\u0435\u0434\u0435\u043B\u0435\u043D\u043D\u044B\u0435 \u0432\u044B\u0447\u0438\u0441\u043B\u0435\u043D\u0438\u044F\\2\\Sockets\\Server\\TCPClient.cs",
+              "RelativeToolTip": "Server\\TCPClient.cs",
+              "ViewState": "AgIAAFIAAAAAAAAAAAAAAFgAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-13T05:15:55.058Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

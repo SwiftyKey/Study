@@ -1,2 +1,0 @@
-obj\Debug\net10.0\Protos/StringComp.cs \
-obj\Debug\net10.0\Protos/StringCompGrpc.cs: Protos/string_comp.proto

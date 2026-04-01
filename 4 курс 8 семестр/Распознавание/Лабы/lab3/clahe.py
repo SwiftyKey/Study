@@ -198,7 +198,7 @@ def clahe_color(image_path, clip_limit=2.0, grid_size=(8, 8), output_path=None):
 
     return equalized_img, rgb_array, equalized_array
 
-def plot_comparison(original, clahe_result, title="CLAHE Сравнение"):
+def plot_comparison(original, clahe_result, output_path, title="CLAHE Сравнение"):
     fig, axes = plt.subplots(2, 2, figsize=(14, 12))
     fig.suptitle(title, fontsize=16, fontweight='bold')
 
@@ -242,7 +242,7 @@ def plot_comparison(original, clahe_result, title="CLAHE Сравнение"):
     axes[1, 1].grid(True, alpha=0.3)
 
     plt.tight_layout(rect=[0, 0.03, 1, 0.95])
-    plt.savefig("clahe_comparison.png", dpi=150)
+    plt.savefig(output_path, dpi=150)
     plt.show()
 
 
@@ -285,30 +285,32 @@ if __name__ == "__main__":
 
     # Вариант 1: умеренное ограничение контраста
     clahe1, orig_arr, res_arr1 = clahe_grayscale(
-        "clahe_test_input.png",
+        BASE_DIR / "clahe_test_input.png",
         clip_limit=2.0,
         grid_size=(8, 8),
-        output_path="clahe_result_2.0_8x8.png"
+        output_path=BASE_DIR / "clahe_result_2.0_8x8.png"
     )
 
     # Вариант 2: сильное ограничение (меньше шума)
     clahe2, _, res_arr2 = clahe_grayscale(
-        "clahe_test_input.png",
+        BASE_DIR / "clahe_test_input.png",
         clip_limit=1.0,
         grid_size=(8, 8),
-        output_path="clahe_result_1.0_8x8.png"
+        output_path=BASE_DIR / "clahe_result_1.0_8x8.png"
     )
 
     # Вариант 3: крупная сетка (меньше адаптивности)
     clahe3, _, res_arr3 = clahe_grayscale(
-        "clahe_test_input.png",
+        BASE_DIR / "clahe_test_input.png",
         clip_limit=2.0,
         grid_size=(4, 4),
-        output_path="clahe_result_2.0_4x4.png"
+        output_path=BASE_DIR / "clahe_result_2.0_4x4.png"
     )
 
     print("\nПостроение сравнительных гистограмм...")
-    plot_comparison(orig_arr, res_arr1, title="CLAHE: clip_limit=2.0, сетка 8×8")
+    plot_comparison(orig_arr, res_arr1, BASE_DIR / "clahe_comparison_2_88.png", title="CLAHE: clip_limit=2.0, сетка 8X8")
+    plot_comparison(orig_arr, res_arr2, BASE_DIR / "clahe_comparison_1_88.png", title="CLAHE: clip_limit=1.0, сетка 8X8")
+    plot_comparison(orig_arr, res_arr3, BASE_DIR / "clahe_comparison_2_44.png", title="CLAHE: clip_limit=2.0, сетка 4x4")
 
     print("\nОбработка завершена!")
     print("\nРекомендации по параметрам CLAHE:")
